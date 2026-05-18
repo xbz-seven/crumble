@@ -20,6 +20,8 @@
         <button id="tab-unpack" class="tab">Unpack</button>
       </nav>
 
+      <div id="notice-bar">Library tab removed - was buggy, will be back in a later release.</div>
+
       <main>
         <section id="panel-pack" class="panel active">
           <div class="field">
@@ -36,7 +38,7 @@
           </div>
           <div class="field">
             <label>Password</label>
-            <input type="password" id="pack-password" placeholder="encryption password" />
+            <input type="password" id="pack-password" placeholder="password (optional)" />
           </div>
           <button id="btn-pack" class="action" disabled>Pack</button>
           <p id="pack-status" class="status"></p>
@@ -46,7 +48,6 @@
           <div class="field">
             <label>Source .crumbs file</label>
             <div class="drop-zone" id="drop-zone-unpack">
-              <img src="Format.png" alt="" class="format-preview" />
               <p>Drop a .crumbs file here</p>
               <span class="or">or</span>
               <button id="btn-select-crumbs">Select .crumbs File</button>

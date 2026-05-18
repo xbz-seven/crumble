@@ -9,7 +9,7 @@
   --text: #000;
   --muted: #555;
   --border: #aaa;
-  --header-bg: #2b2b3c;
+  --header-bg: #2b1f0a;
   --header-text: #eee;
   font-family: "Segoe UI", Tahoma, sans-serif;
   font-size: 13px;
@@ -79,6 +79,15 @@ nav {
 .panel { display: none; padding: 10px; }
 .panel.active { display: block; }
 
+#notice-bar {
+  background: #fff3cd;
+  border-bottom: 1px solid #e6c952;
+  color: #856404;
+  font-size: 11px;
+  padding: 4px 14px;
+  text-align: center;
+}
+
 main {
   padding: 0;
 }
@@ -91,17 +100,9 @@ main {
   margin-bottom: 8px;
 }
 
-.format-preview {
-  width: 64px;
-  height: 64px;
-  display: block;
-  margin: 0 auto 10px;
-  opacity: 0.5;
-}
-
 .drop-zone.drag-over {
   border-color: var(--accent);
-  background: #e8f0fe;
+  background: #fef0e8;
 }
 
 .drop-zone p { color: var(--muted); font-size: 12px; }
@@ -283,7 +284,7 @@ main {
 }
 
 .file-item:nth-child(even) { background: #f8f8f8; }
-.file-item:hover { background: #e8f0fe; }
+.file-item:hover { background: #fef0e8; }
 
 .file-item input[type="checkbox"] {
   width: 13px;
