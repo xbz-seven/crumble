@@ -1,0 +1,9 @@
+[Desktop Entry]
+Categories=Utility;Archiver;Security;
+Comment=Pack and unpack .crumbs files
+Exec=crumble
+StartupWMClass=crumble
+Icon=crumble
+Name=Crumble
+Terminal=false
+Type=Application

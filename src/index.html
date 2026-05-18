@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crumble</title>
+    <script type="module" src="/src/main.ts" defer></script>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Crumble</h1>
+        <span class="subtitle">pack &amp; unpack .crumbs files</span>
+      </header>
+
+      <nav>
+        <button id="tab-pack" class="tab active">Pack</button>
+        <button id="tab-unpack" class="tab">Unpack</button>
+        <button id="tab-library" class="tab">Library</button>
+      </nav>
+
+      <main>
+        <section id="panel-pack" class="panel active">
+          <div class="field">
+            <label>Source files / folders</label>
+            <div class="drop-zone" id="drop-zone-pack">
+              <p>Drag files/folders here</p>
+              <span class="or">or</span>
+              <div class="btn-row">
+                <button id="btn-select-files">Select Files</button>
+                <button id="btn-select-folder">Select Folder</button>
+              </div>
+            </div>
+            <ul id="source-list" class="file-list"></ul>
+          </div>
+          <div class="field">
+            <label>Password</label>
+            <input type="password" id="pack-password" placeholder="encryption password" />
+          </div>
+          <button id="btn-pack" class="action" disabled>Pack</button>
+          <p id="pack-status" class="status"></p>
+        </section>
+
+        <section id="panel-unpack" class="panel">
+          <div class="field">
+            <label>Source .crumbs file</label>
+            <div class="drop-zone" id="drop-zone-unpack">
+              <p>Drop a .crumbs file here</p>
+              <span class="or">or</span>
+              <button id="btn-select-crumbs">Select .crumbs File</button>
+              <p id="selected-crumbs" class="selected-file"></p>
+            </div>
+          </div>
+          <div class="field">
+            <label>Password</label>
+            <input type="password" id="unpack-password" placeholder="encryption password" />
+          </div>
+          <button id="btn-scan" class="action-secondary" disabled>Scan Contents</button>
+
+          <div id="contents-area" class="hidden">
+            <div class="contents-header">
+              <label class="contents-title" style="display:flex;align-items:center;gap:6px;cursor:pointer">
+                <input type="checkbox" id="master-check" /> Package Contents
+              </label>
+              <button id="btn-toggle-all" class="toggle-all">Invert</button>
+            </div>
+            <div id="file-tree" class="file-tree"></div>
+
+            <div class="field">
+              <label>Install to</label>
+              <div class="dir-picker">
+                <input type="text" id="install-dir" placeholder="select destination folder…" readonly />
+                <button id="btn-select-dir">Browse</button>
+              </div>
+            </div>
+            <button id="btn-install" class="action" disabled>Install</button>
+          </div>
+          <p id="unpack-status" class="status"></p>
+        </section>
+
+        <section id="panel-library" class="panel">
+          <div class="lib-header">
+            <span class="contents-title">Packed Packages</span>
+            <button id="btn-clear-lib" class="toggle-all">Clear</button>
+          </div>
+          <div id="lib-list" class="lib-list"></div>
+        </section>
+      </main>
+    </div>
+
+    <div id="confirm-overlay" class="overlay hidden">
+      <div class="confirm-dialog">
+        <p id="confirm-msg"></p>
+        <div class="confirm-actions">
+          <button id="confirm-cancel" class="action-secondary">Cancel</button>
+          <button id="confirm-ok" class="action">Yes, Install</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
