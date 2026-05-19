@@ -1,6 +1,6 @@
 [package]
 name = "crumble"
-version = "0.1.1"
+version = "1.2.0"
 description = "Pack and unpack .crumbs files"
 authors = ["you"]
 edition = "2021"
